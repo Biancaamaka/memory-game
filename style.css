@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+background-color: #262626;
+color: #fff;
+font-family: 'Monoton', cursive;
+height: 100vh;
+}
+
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; 
+}
+
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    padding: 1em;
+}
+
+.game-container{
+    margin: 2em;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4,auto);
+    justify-content: center;
+}
+
+.card{
+   
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    /* width: 25%;
+    height:33.33%; */
+    height: 130px;
+    width:125px;
+    border-radius: 20%;
+    position: relative;
+    /* transform: scale(1); */
+}
+
+/* .card:active{
+    transform: scale(.90);
+    transition: ease-in-out;
+} */
+
+.card-front{
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    /* width:100px; */
+    height: 130px;
+    width:125px;
+    border-radius: 20%;
+    /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
+
+}
+.card-front-brain{
+    position: absolute;
+    height: 130px;
+    width:125px;
+    border-radius: 20%;
+    background-image: url('/images/brain.jpg');
+    background-size: cover;
+
+}
+.brain{
+    position: absolute;
+    height: 130px;
+    width:125px;
+    border-radius: 20%;
+    background-image: url('/images/brain.jpg');
+    background-size: cover;
+
+}
+
+.btn{
+    background-color: darkviolet;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20%;
+    font-size: 2em;
+    display: block;
+    margin: 0 auto;
+}
+#cats{
+    background-image: url(/images/cat.jpg);
+    background-size: cover;
+}
+#dog{
+    background-image: url(/images/dog.jpg);
+     background-size: cover;
+}
+#eagle{
+    background-image: url(/images/eagle.jpg);
+     background-size: cover;
+}
+#lion{
+    background-image: url(/images/lion.jpg);
+     background-size: cover;
+}
+#pigeon{
+    background-image: url(images/pigeon.jpg);
+     background-size: cover;
+}
+#rabbit{
+    background-image: url(images/rabbit.jpg);
+    background-size: cover;
+}
+

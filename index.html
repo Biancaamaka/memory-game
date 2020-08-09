@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MEMORY GAME</title>
+</head>
+
+<body>
+    <div class="container" id="hide">
+        <div class="head">
+            <h1>
+                Memory Check
+            </h1>
+            <h5>Score: <span id="score">0</span></h5>
+            <h5>Time: 0: <span id="timer">0</span></h5>
+        </div>
+        <div class="game-container">
+            <img id="gif" width="150px" height="100px" style="border-style: none;" />
+        </div>
+        <div class="game-container">
+
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+            <div class="card">
+                <button class="card-front card-front-brain"></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <button class="btn" id="btn" onclick="brain()" style="margin-top: 10px;">
+        Play
+      </button>
+    </div>
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
