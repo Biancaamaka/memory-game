@@ -2,19 +2,21 @@
 const marker = { frst: '' }
 const hide = () => {
     document.querySelectorAll(".card-front:not(.clicked)").forEach(val => {
-        val.setAttribute('style', "background:url(/images/brain.jpg)");
+        val.setAttribute('style', "background:url(images/brain.jpg)");
     })
+    
     if (document.getElementById("btn").innerHTML === "Game Over, Try Again") {
 
         document.getElementById("hide").style.display = "block"
         count = 0;
         document.getElementById("btn").innerHTML = "Play"
         window.location.reload()
-    } else { setInterval(timer, 1000) }
+    } //else { setInterval(timer, 1000) }
 }
 
 function brain() {
-    setInterval(hide, 5000)
+     setTimeout(wait, 3000)
+     setInterval(hide, 3000)
     var added = [{
             val: 'cats',
             count: 0
@@ -46,22 +48,35 @@ function brain() {
         }
 
     })
+    logic()
 }
 
 let score = 0;
 
-// function showBrain(id, setID) 
-document.querySelectorAll('.card-front:not(.clicked)').forEach(val => val.addEventListener('click', (e) => {
+function logic(){ 
+    document.querySelectorAll('.card-front:not(.clicked)').forEach(val => {
+        logicpane(val, 'click')
+    })
+}
+
+const logicpane = (element, eventType='click') => {
+    element.addEventListener(eventType, handleClick);
+};
+
+
+function handleClick(e){
+    val = e.target
     let firstObj = e.target.id;
     if (document.getElementById("timer").innerHTML > 1) {
         val.removeAttribute("style")
-        val.removeEventListener('click', (e) => {})
-        val.classList.add('clicked')
         if (marker.frst == '') {
             //if first clicked empty, make first clicked first item
             marker.frst = firstObj;
-        } else if (marker.frst == firstObj) {
-
+            val.removeEventListener('click', handleClick)
+            val.classList.add('clicked')
+        } else if (marker.frst == firstObj) {                
+            val.removeEventListener('click', handleClick)
+            val.classList.add('clicked')
             score += 1;
             //make first clicked empty
             marker.frst = '';
@@ -70,19 +85,24 @@ document.querySelectorAll('.card-front:not(.clicked)').forEach(val => val.addEve
 
         } else {
             document.getElementById("gif").setAttribute("src", "images/gif2.gif");
-            // document.getElementById(`${setID}`).style.backgroundImage = 'url(images/brain.jpg)'
         }
-        console.log(marker, marker.frst, firstObj)
+        // console.log(marker, marker.frst, firstObj)
     }
-}))
+}
+
 
 let count = 0;
 
 function timer() {
     count += 1
     document.getElementById("timer").innerHTML = count
-    if (count == 58) {
+    if (count == 59) {
         document.getElementById("hide").style.display = "none";
         document.getElementById("btn").innerHTML = "Game Over, Try Again";
     }
+}
+function wait(){
+    // setTimeout( setInterval(timer, 1000),3000)
+    // setInterval(hide, 3000)
+    setInterval(timer, 1000)
 }
