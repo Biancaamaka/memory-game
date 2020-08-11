@@ -1,22 +1,20 @@
+let hideInterval = null;
+let hideCountInterval = null;
+
 //stores clicked data
+
 const marker = { frst: '' }
 const hide = () => {
     document.querySelectorAll(".card-front:not(.clicked)").forEach(val => {
-        val.setAttribute('style', "background:url(images/brain.jpg)");
+        val.setAttribute('style', "background:url(./images/brain.jpg)");
     })
-    
-    if (document.getElementById("btn").innerHTML === "Game Over, Try Again") {
-
-        document.getElementById("hide").style.display = "block"
-        count = 0;
-        document.getElementById("btn").innerHTML = "Play"
-        window.location.reload()
-    } //else { setInterval(timer, 1000) }
 }
 
+
+
 function brain() {
-     setTimeout(wait, 3000)
-     setInterval(hide, 3000)
+    setTimeout(wait,3000)
+    hideInterval = setInterval(hide, 3000)
     var added = [{
             val: 'cats',
             count: 0
@@ -48,7 +46,7 @@ function brain() {
         }
 
     })
-    logic()
+    logic();
 }
 
 let score = 0;
@@ -57,6 +55,7 @@ function logic(){
     document.querySelectorAll('.card-front:not(.clicked)').forEach(val => {
         logicpane(val, 'click')
     })
+    countInterval = setInterval(timer, 1000)
 }
 
 const logicpane = (element, eventType='click') => {
@@ -86,7 +85,6 @@ function handleClick(e){
         } else {
             document.getElementById("gif").setAttribute("src", "images/gif2.gif");
         }
-        // console.log(marker, marker.frst, firstObj)
     }
 }
 
@@ -97,12 +95,22 @@ function timer() {
     count += 1
     document.getElementById("timer").innerHTML = count
     if (count == 59) {
+        clearInterval(hideInterval)
+        clearInterval(hideCountInterval)
         document.getElementById("hide").style.display = "none";
         document.getElementById("btn").innerHTML = "Game Over, Try Again";
+        document.getElementById('results').innerHTML = `<b>CONGRATS! Score: ${score} </b>`
+        document.getElementById("results").style.display = "block";
+        document.getElementById("btn").removeEventListener('click', brain)
+        document.getElementById("btn").addEventListener('click', ()=>{
+            window.location.reload()
+        })
+        count = 0;
+
     }
 }
 function wait(){
     // setTimeout( setInterval(timer, 1000),3000)
     // setInterval(hide, 3000)
-    setInterval(timer, 1000)
+    hideCountInterval = setInterval(timer, 1000)
 }
