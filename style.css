@@ -70,7 +70,7 @@ width:100%;
     height: 9.5rem;
     width:100%;
     border-radius: 20%;
-    background-image: url('/images/brain.jpg');
+    background-image: url('./images/brain.jpg');
     background-size: cover;
 }
 .brain{
@@ -78,7 +78,7 @@ width:100%;
     height: 130px;
     width:125px;
     border-radius: 20%;
-    background-image: url('/images/brain.jpg');
+    background-image: url('./images/brain.jpg');
     background-size: contain;
 }
 
@@ -95,27 +95,27 @@ width:100%;
    
 }
 #cats{
-    background-image: url(./images/cat.jpg);
+    background-image: url('./images/cat.jpg');
     background-size: cover;
 }
 #dog{
-    background-image: url(./images/dog.jpg);
+    background-image: url('./images/dog.jpg');
      background-size: cover;
 }
 #eagle{
-    background-image: url(./images/eagle.jpg);
+    background-image: url('./images/eagle.jpg');
      background-size: cover;
 }
 #lion{
-    background-image: url(./images/lion.jpg);
+    background-image: url('./images/lion.jpg)');
      background-size: cover;
 }
 #pigeon{
-    background-image: url(./images/pigeon.jpg);
+    background-image: url('./images/pigeon.jpg');
      background-size: cover;
 }
 #rabbit{
-    background-image: url(./images/rabbit.jpg);
+    background-image: url('./images/rabbit.jpg');
     background-size: cover;
 }
 @media (max-width:560px) {
